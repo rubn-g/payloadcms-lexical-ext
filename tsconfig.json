@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"target": "es6",
+		"lib": [
+			"esnext"
+		],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"strictNullChecks": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"incremental": true,
+		"jsx": "preserve",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"isolatedModules": true,
+		"paths": {
+			"react": [
+				"./node_modules/@types/react"
+			],
+		}
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+	],
+	"exclude": [
+		"node_modules",
+	]
+}

@@ -1,0 +1,36 @@
+.color-picker-wrapper {
+	padding: 10px;
+
+	@apply box-border w-full;
+}
+
+.color-picker-wrapper .react-colorful {
+	width: 180px;
+	height: 180px;
+
+	@apply mt-4;
+}
+
+.color-picker-wrapper .react-colorful .react-colorful__saturation {
+	@apply rounded-t-md;
+}
+
+.color-picker-wrapper .react-colorful .react-colorful__hue {
+	@apply rounded-b-md;
+}
+
+.color-picker-basic-color {
+	@apply flex justify-between flex-wrap gap-2;
+}
+
+.color-picker-wrapper button {
+	@apply rounded-md border border-border border-solid cursor-pointer text-left;
+}
+
+.color-picker-basic-color button {
+	@apply w-6 h-6;
+}
+
+.color-picker-basic-color button.active {
+	@apply border-white;
+}
