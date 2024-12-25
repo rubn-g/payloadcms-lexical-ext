@@ -1,6 +1,6 @@
 {
 	"name": "payloadcms-lexical-ext",
-	"version": "0.0.13",
+	"version": "0.0.16",
 	"description": "Extended lexical editor features for Payload CMS",
 	"type": "module",
 	"main": "build/index.js",
@@ -17,6 +17,9 @@
 		},
 		"./client": {
 			"import": "./build/client.js"
+		},
+		"./client/client.css": {
+			"import": "./build/client.css"
 		}
 	},
 	"dependencies": {
@@ -26,8 +29,11 @@
 	"devDependencies": {
 		"@types/node": "^22.10.2",
 		"@types/react": "^19.0.2",
+		"css-tree": "^3.1.0",
 		"esbuild": "^0.24.2",
-		"esbuild-sass-plugin": "^3.3.1",
+		"esbuild-css-modules-plugin": "^3.1.2",
+		"esbuild-plugin-tailwindcss": "^1.2.1",
+		"tailwindcss": "^3.4.17",
 		"tsup": "^8.3.5",
 		"typescript": "^5.7.2"
 	},

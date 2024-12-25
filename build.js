@@ -1,5 +1,5 @@
 import * as esbuild from 'esbuild'
-import { sassPlugin } from 'esbuild-sass-plugin'
+import { tailwindPlugin } from 'esbuild-plugin-tailwindcss';
 
 async function build(args) {
 	await esbuild.build({
@@ -10,7 +10,6 @@ async function build(args) {
 		format: 'esm',
 		splitting: true,
 		external: [
-			// '*.scss',
 			'@payloadcms/*',
 			'@payloadcms/ui',
 			'@payloadcms/ui/*',
@@ -26,7 +25,9 @@ async function build(args) {
 
 		tsconfig: './tsconfig.json',
 		plugins: [
-			sassPlugin({ css: 'external' }),
+			tailwindPlugin({
+				config: './tailwind.config.js'
+			}),
 			// removeCSSImports,
 			/*commonjs({
 				ignore: ['date-fns', '@floating-ui/react'],
