@@ -1,5 +1,5 @@
 import { LexicalEditor } from '@payloadcms/richtext-lexical/lexical';
-import { JSX, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ColorPicker from './ColorPicker';
 import { ColorDropdownGroupItem } from '../types';
 
@@ -17,7 +17,7 @@ export default function Toolbar({
 	editor,
 	enabled = true,
 	item,
-}: Props): JSX.Element {
+}: Props): React.JSX.Element {
 	const [ activeColor, setActiveColor ] = useState<string>('')
 
 	const onChange = (color: string) => {
