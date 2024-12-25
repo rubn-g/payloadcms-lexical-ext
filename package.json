@@ -1,20 +1,38 @@
 {
 	"name": "payloadcms-lexical-ext",
-	"version": "0.0.1",
-	"description": "",
-	"main": "index.js",
+	"version": "0.0.12",
+	"description": "Extended lexical editor features for Payload CMS",
+	"type": "module",
+	"main": "build/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "npx tsup && node build.js"
 	},
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Rubén González",
+	"license": "MIT",
+	"exports": {
+		".": {
+			"import": "./build/index.js",
+			"types": "./build/index.d.ts"
+		},
+		"./client": {
+			"import": "./build/client.js"
+		}
+	},
 	"dependencies": {
 		"lucide-react": "^0.469.0",
 		"react-colorful": "^5.6.1"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.2",
-		"@types/react": "^19.0.2"
+		"@types/react": "^19.0.2",
+		"esbuild": "^0.24.2",
+		"esbuild-sass-plugin": "^3.3.1",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2"
+	},
+	"peerDependencies": {
+		"@lexical/table": "^0.20.0",
+		"@payloadcms/richtext-lexical": "^3.0.0"
 	}
 }
