@@ -6,7 +6,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				border: '#444',
+				border: 'var(--color-border)',
 			}
 		},
 	},
