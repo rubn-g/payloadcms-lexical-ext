@@ -1,9 +1,21 @@
 @tailwind utilities;
 
+:root {
+	--color-border: #ddd;
+}
+
+[data-theme='dark'] {
+	--color-border: #444;
+}
+
 .color-picker-wrapper {
 	padding: 10px;
 
 	@apply box-border w-full;
+}
+
+.color-picker-wrapper .color-input > * {
+	@apply rounded-md border border-solid border-border h-10;
 }
 
 .color-picker-wrapper .react-colorful {
@@ -34,5 +46,5 @@
 }
 
 .color-picker-basic-color button.active {
-	@apply border-white;
+	@apply border-black dark:border-white;
 }
