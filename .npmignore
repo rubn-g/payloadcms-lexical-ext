@@ -8,6 +8,5 @@ src
 build.js
 client.ts
 index.ts
-README
 tsconfig.json
 tsup.config.ts
