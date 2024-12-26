@@ -3,9 +3,11 @@ import colors from 'tailwindcss/colors'
 import React from 'react';
 import { Hash, Undo } from 'lucide-react';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
+import { Color } from '../types';
 
 type ColorPickerProps = {
 	color: string;
+	colors?: Color[],
 	customColors?: string[];
 	onChange: (color: string) => void;
 }
@@ -88,27 +90,29 @@ const basicColors = [
 	colors.fuchsia[950],
 ];
 
-export default function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): React.JSX.Element {
+export default function ColorPicker({ color, colors, onChange }: Readonly<ColorPickerProps>): React.JSX.Element {
 	const onReset = (): void => {
 		onChange('')
 	};
 
 	return (
 		<div className="color-picker-wrapper">
-			<div className="flex">
-				<div className="w-10 h-10 mr-2 rounded-md border border-solid border-border flex-none" style={{ backgroundColor: color }}></div>
+			<div className="flex color-input">
+				<div className="w-10 mr-2 flex-none" style={{ backgroundColor: color }}></div>
 				<HexColorInput
-					className="flex-1 h-10 px-2 py-1 rounded-md min-w-0 border border-solid border-border"
+					className="flex-1 px-2 py-1 min-w-0"
 					onChange={onChange}
 					color={color}
 				/>
 			</div>
-			<button className="w-full p-2 mt-2 bg-transparent hover:bg-white hover:bg-opacity-10" onClick={onReset}>
+			<button className="w-full p-2 mt-2 bg-transparent hover:bg-black dark:hover:bg-white hover:bg-opacity-10" onClick={onReset}>
 				<Undo strokeWidth={1.5} className="w-5 h-5 mr-1" /> Reset color
 			</button>
-			<button className="w-full p-2 mt-2 bg-transparent hover:bg-white hover:bg-opacity-10" onClick={() => onChange('var(--color-category, #ccc)')}>
-				<Hash strokeWidth={1.5} className="w-5 h-5 mr-1" /> Category color
-			</button>
+			{colors?.filter(c => c.type === 'button').map((color, i) => (
+				<button key={i} className="w-full p-2 mt-2 bg-transparent hover:bg-black dark:hover:bg-white hover:bg-opacity-10" onClick={() => onChange('var(--color-category, #ccc)')}>
+					<Hash strokeWidth={1.5} className="w-5 h-5 mr-1" /> {color.label}
+				</button>
+			))}
 			<div className="color-picker-basic-color mt-2">
 				{basicColors.map((basicColor) => (
 					<button

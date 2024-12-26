@@ -34,6 +34,6 @@ export default function Toolbar({
 	}, [ editor ])
 
 	return (
-		<ColorPicker color={activeColor} onChange={onChange} />
+		<ColorPicker color={activeColor} onChange={onChange} colors={item.colors} />
 	)
 }
