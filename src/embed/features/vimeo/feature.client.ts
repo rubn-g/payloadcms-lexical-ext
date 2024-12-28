@@ -2,9 +2,9 @@
 
 import { createClientFeature, toolbarAddDropdownGroupWithItems } from '@payloadcms/richtext-lexical/client';
 import { $isNodeSelection } from '@payloadcms/richtext-lexical/lexical'
-import { INSERT_YOUTUBE_EMBED } from './command';
-import { $createYouTubeNode, $isYouTubeNode, YouTubeNode } from '../../nodes/YoutubeNode';
+import { INSERT_VIMEO_EMBED } from './command';
 import Icon from './Icon';
+import { $createVimeoNode, $isVimeoNode, VimeoNode } from 'src/embed/nodes/VimeoNode';
 import { createPlugin } from '../createPlugin';
 
 const groups = toolbarAddDropdownGroupWithItems([
@@ -17,12 +17,12 @@ const groups = toolbarAddDropdownGroupWithItems([
 
 			const firstNode = selection.getNodes()[ 0 ]
 
-			return $isYouTubeNode(firstNode);
+			return $isVimeoNode(firstNode);
 		},
-		key: 'youtube',
-		label: 'Youtube',
+		key: 'vimeo',
+		label: 'Vimeo',
 		onSelect: ({ editor }) => {
-			editor.dispatchCommand(INSERT_YOUTUBE_EMBED, { replace: false })
+			editor.dispatchCommand(INSERT_VIMEO_EMBED, { replace: false })
 		},
 	},
 ])
@@ -31,13 +31,13 @@ export default createClientFeature(() => {
 	return {
 		plugins: [{
 			Component: createPlugin({
-				featureKey: 'youtube',
-				command: INSERT_YOUTUBE_EMBED,
-				createNode: $createYouTubeNode
+				featureKey: 'vimeo',
+				command: INSERT_VIMEO_EMBED,
+				createNode: $createVimeoNode
 			}),
 			position: 'normal',
 		}],
-		nodes: [ YouTubeNode ],
+		nodes: [ VimeoNode ],
 		toolbarFixed: {
 			groups: [ groups ],
 		},

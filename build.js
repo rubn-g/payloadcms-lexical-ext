@@ -9,6 +9,7 @@ async function build(args) {
 		platform: 'browser',
 		format: 'esm',
 		splitting: true,
+		target: 'esnext',
 		external: [
 			'@payloadcms/*',
 			'@payloadcms/ui',

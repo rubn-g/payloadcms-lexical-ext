@@ -1,19 +1,19 @@
 import { createNode } from '@payloadcms/richtext-lexical';
-import { YouTubeNode } from '../../nodes/YoutubeNode';
+import { VimeoNode } from '../../nodes/VimeoNode';
 import { createEmbedServerFeature } from '../createServerEmbed';
 
-export const YoutubeFeature = createEmbedServerFeature({
-	ClientFeature: 'payloadcms-lexical-ext/client#YoutubeFeatureClient',
+export const VimeoFeature = createEmbedServerFeature({
+	ClientFeature: 'payloadcms-lexical-ext/client#VimeoFeatureClient',
 	node: createNode({
-		node: YouTubeNode,
+		node: VimeoNode,
 		converters: {
 			html: {
-				nodeTypes: [ YouTubeNode.getType() ],
+				nodeTypes: [ VimeoNode.getType() ],
 				async converter({ node }) {
 					return `
 						<div>
 							<iframe
-								src="https://www.youtube-nocookie.com/embed/${node.id}?modestbranding=1&rel=0&hl=es"
+								src="https://player.vimeo.com/video/${node.id}"
 								width="100%"
 								style="aspect-ratio: 16/9"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -25,5 +25,5 @@ export const YoutubeFeature = createEmbedServerFeature({
 			}
 		},
 	}),
-	key: 'youtube',
+	key: 'vimeo',
 })

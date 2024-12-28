@@ -6,29 +6,29 @@ import type {
 	LexicalNode,
 } from '@payloadcms/richtext-lexical/lexical';
 import { JSX } from 'react';
-import YoutubeComponent from '../components/YoutubeComponent';
+import VimeoComponent from '../components/VimeoComponent';
 import { EmbedNode, SerializedEmbedNode } from './EmbedNode';
 
-export class YouTubeNode extends EmbedNode {
+export class VimeoNode extends EmbedNode {
 	static getType(): string {
-		return 'youtube';
+		return 'vimeo';
 	}
 
 	static clone(node: EmbedNode): EmbedNode {
 		return super.clone(node);
 	}
 
-	static importJSON(serializedNode: SerializedEmbedNode): YouTubeNode {
-		return super.importJSON(serializedNode) as YouTubeNode;
+	static importJSON(serializedNode: SerializedEmbedNode): VimeoNode {
+		return super.importJSON(serializedNode) as VimeoNode;
 	}
 
 	exportDOM(): DOMExportOutput {
 		const element = document.createElement('iframe');
 
 		element.style.aspectRatio = '16/9';
-		element.setAttribute('data-lexical-youtube', this.__id);
+		element.setAttribute('data-lexical-vimeo', this.__id);
 		element.setAttribute('width', '100%');
-		element.setAttribute('src', `https://www.youtube-nocookie.com/embed/${this.__id}`);
+		element.setAttribute('src', `https://player.vimeo.com/video/${this.__id}`);
 		element.setAttribute('frameborder', '0');
 		element.setAttribute(
 			'allow',
@@ -44,11 +44,11 @@ export class YouTubeNode extends EmbedNode {
 			iframe: (domNode: HTMLElement) => {
 				const src = domNode.getAttribute('src') || domNode.getAttribute('data-src')
 
-				const match = src?.match(/youtube(\-nocookie)?\.com\/embed\/([^?]+)/)
+				const match = src?.match(/vimeo\.com\/video\/([^?]+)/)
 
-				if (match && match[2]) {
+				if (match && match[1]) {
 					return {
-						conversion: () => ({ node: $createYouTubeNode(match[2]) }),
+						conversion: () => ({ node: $createVimeoNode(match[2]) }),
 						priority: 1,
 					};
 				}
@@ -59,7 +59,7 @@ export class YouTubeNode extends EmbedNode {
 	}
 
 	getTextContent(): string {
-		return `https://www.youtube.com/watch?v=${this.__id}`;
+		return `https://www.vimeo.com/${this.__id}`;
 	}
 
 	decorate(_editor: LexicalEditor, config: EditorConfig): JSX.Element {
@@ -72,7 +72,7 @@ export class YouTubeNode extends EmbedNode {
 			};
 		}
 
-		return YoutubeComponent({ id: this.__id, className });
+		return VimeoComponent({ id: this.__id, className });
 	}
 
 	exportJSON(): SerializedEmbedNode {
@@ -80,12 +80,12 @@ export class YouTubeNode extends EmbedNode {
 	}
 }
 
-export function $createYouTubeNode(videoID: string): YouTubeNode {
-	return new YouTubeNode(videoID);
+export function $createVimeoNode(videoID: string): VimeoNode {
+	return new VimeoNode(videoID);
 }
 
-export function $isYouTubeNode(
-	node: YouTubeNode | LexicalNode | null | undefined
-): node is YouTubeNode {
-	return node instanceof YouTubeNode;
+export function $isVimeoNode(
+	node: VimeoNode | LexicalNode | null | undefined
+): node is VimeoNode {
+	return node instanceof VimeoNode;
 }

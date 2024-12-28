@@ -7,7 +7,7 @@ This plugin adds new features to the **Payload CMS lexical editor**:
 - **Text Color** – Customize the color of selected text.
 - **Text Highlight** – Highlight text with a background color.
 - **Block Background Color** – Apply background colors to entire blocks of content.
-- **Embed youtube videos** - Add embedded youtube videos to the content of the editor
+- **Embed videos** - Add embedded youtube or vimeo videos to the content of the editor
 
 **New features will be added** - Create issues for new features or create them yourself and create a PR to share it with the community
 
@@ -21,8 +21,8 @@ This plugin adds new features to the **Payload CMS lexical editor**:
 ### Block Background Feature
 ![Block Background Example](https://raw.githubusercontent.com/rubn-g/payloadcms-lexical-ext/refs/heads/main/screenshots/screenshot-1.png)
 
-### Embed Youtube Feature
-![Embed Youtube Example](https://raw.githubusercontent.com/rubn-g/payloadcms-lexical-ext/refs/heads/main/screenshots/screenshot-4.png)
+### Embed Video Feature
+![Embed Video Example](https://raw.githubusercontent.com/rubn-g/payloadcms-lexical-ext/refs/heads/main/screenshots/screenshot-4.png)
 
 ## 📦 Installation
 ```bash
@@ -38,7 +38,7 @@ yarn add payloadcms-lexical-ext
 ## 🛠️ Usage
 1. Import the features you want to use:
 ```javascript
-import { BgColorFeature, HighlightColorFeature, TextColorFeature, YoutubeFeature } from 'payloadcms-lexical-ext';
+import { BgColorFeature, HighlightColorFeature, TextColorFeature, YoutubeFeature, VimeoFeature } from 'payloadcms-lexical-ext';
 ```
 
 2. Add features to your lexical editor configuration:
@@ -53,6 +53,7 @@ lexicalEditor({
 		HighlightColorFeature(),
 		BgColorFeature(),
 		YoutubeFeature(),
+		VimeoFeature()
 	]
 });
 ```

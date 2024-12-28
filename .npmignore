@@ -4,6 +4,7 @@
 .prettierignore
 .prettierrc.js
 node_modules
+screenshots
 src
 build.js
 client.ts
