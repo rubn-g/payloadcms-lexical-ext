@@ -1,8 +1,10 @@
 # Payload CMS lexical editor extend
 
 ## 🚀 Overview
+
 Ideal for content creators and developers who want to enrich their text content with more visual appeal.<br />
-This plugin adds new features to the **Payload CMS lexical editor**:
+
+This plugin adds new features to the **Payload CMS lexical editor**. You can use any of the features on its own or all of them togehter:
 
 - **Text Color** – Customize the color of selected text.
 - **Text Highlight** – Highlight text with a background color.
@@ -43,8 +45,6 @@ import { BgColorFeature, HighlightColorFeature, TextColorFeature, YoutubeFeature
 
 2. Add features to your lexical editor configuration:
 ```javascript
-import { lexicalEditor, defaultEditorFeatures } from '@payloadcms/richtext-lexical'
-
 lexicalEditor({
 	features: [
 		...defaultEditorFeatures,
