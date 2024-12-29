@@ -43,7 +43,12 @@ yarn add payloadcms-lexical-ext
 import { BgColorFeature, HighlightColorFeature, TextColorFeature, YoutubeFeature, VimeoFeature } from 'payloadcms-lexical-ext';
 ```
 
-2. Add features to your lexical editor configuration:
+2. If you're using any of the color features, import required css
+```javascript
+import 'payloadcms-lexical-ext/client/client.css'
+```
+
+3. Add features to your lexical editor configuration:
 ```javascript
 lexicalEditor({
 	features: [
