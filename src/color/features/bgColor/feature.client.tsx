@@ -6,10 +6,9 @@ import { $isTableSelection } from '@lexical/table';
 import Dropdown from '../../components/Dropdown';
 import Icon from './Icon';
 import { UPDATE_BG_COLOR } from './command';
-import { ColorDropdownGroup } from '../../types';
+import { ColorDropdownGroup, ColorFeatureProps } from '../../types';
 import { CustomParagraphNode } from '../../nodes/CustomParagraphNode';
 import { CustomHeadingNode } from '../../nodes/CustomHeadingNode';
-import { ColorFeatureProps } from 'build';
 
 export default createClientFeature<ColorFeatureProps>(({ props }) => {
 	const groups: ColorDropdownGroup[] = [ {

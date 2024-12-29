@@ -6,7 +6,7 @@ export const TextColorFeature = createServerFeature<ColorFeatureProps, ColorFeat
 		return {
 			ClientFeature: 'payloadcms-lexical-ext/client#TextColorFeatureClient',
 			clientFeatureProps: {
-				colors: props.colors
+				colors: props?.colors
 			},
 		}
 	},

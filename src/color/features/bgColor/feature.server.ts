@@ -9,7 +9,7 @@ export const BgColorFeature = createServerFeature<ColorFeatureProps, ColorFeatur
 		return {
 			ClientFeature: 'payloadcms-lexical-ext/client#BgColorFeatureClient',
 			clientFeatureProps: {
-				colors: props.colors
+				colors: props?.colors
 			},
 			nodes: [
 				createServerNode(CustomParagraphNode),

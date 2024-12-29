@@ -5,10 +5,10 @@ import { $getSelectionStyleValueForProperty } from '@payloadcms/richtext-lexical
 import Dropdown from '../../components/Dropdown';
 import Icon from './Icon';
 import { UPDATE_HL_COLOR } from './command';
-import { ColorDropdownGroup } from '../../types';
+import { ColorDropdownGroup, ColorFeatureProps } from '../../types';
 import getSelection from '../getSelection';
 
-export default createClientFeature(({ props }) => {
+export default createClientFeature<ColorFeatureProps>(({ props }) => {
 	const groups: ColorDropdownGroup[] = [ {
 		type: 'dropdown',
 		ChildComponent: Icon,

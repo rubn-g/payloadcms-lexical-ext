@@ -17,5 +17,5 @@ export type ColorDropdownGroup = ToolbarGroup & {
 }
 
 export type ColorFeatureProps = {
-	colors: Color[];
+	colors?: Color[];
 }
