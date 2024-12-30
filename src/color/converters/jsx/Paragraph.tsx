@@ -17,10 +17,10 @@ export const ParagraphJSXConverter: JSXConverters<SerializedCustomParagraphNode>
 		}
 
 		const style: React.CSSProperties = { paddingTop: '.5rem', paddingBottom: '.5rem' }
-		const match = node.style.match(/background-color: (.+);?/)
+		const match = node.style.match(/background-color: ([^;]+)/)
 
 		match && (style.backgroundColor = match[1])
 
-		return <p style={style} dangerouslySetInnerHTML={{ __html: children }} />
+		return <p style={style}>{children }</p>
 	},
 }

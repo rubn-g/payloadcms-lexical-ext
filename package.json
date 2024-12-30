@@ -1,6 +1,6 @@
 {
 	"name": "payloadcms-lexical-ext",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Extended lexical editor features for Payload CMS",
 	"type": "module",
 	"main": "build/index.js",
