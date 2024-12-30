@@ -35,11 +35,12 @@ export default (node) => {
 				node.format ? `text-align: ${node.format};` : '',
 				node.indent > 0 ? `padding-inline-start: ${node.indent * 40}px;` : '',
 				node.style.match(/background-color: (.+);?/) ? node.style : null,
+				'padding-top: .5rem; padding-bottom: .5rem;',
 			]
 				.filter(Boolean)
 				.join(' ')
 
-			return `<${node.tag || 'p'}${style ? ` style="${style}"` : ''} class="py-2">${childrenText}</${node.tag || 'p'}>`
+			return `<${node.tag || 'p'}${style ? ` style="${style}"` : ''}>${childrenText}</${node.tag || 'p'}>`
 		},
 	}
 

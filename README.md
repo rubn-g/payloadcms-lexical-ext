@@ -63,7 +63,40 @@ lexicalEditor({
 });
 ```
 
-3. Customize options as needed to fit your design requirements.
+4. Add JSX or HTML converters
+
+	4.1 JSX Converters
+
+	components/RichText/index.tsx
+
+	```javascript
+	import { JSXConverters } from 'payloadcms-lexical-ext'
+
+	const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
+		...defaultConverters,
+		...JSXConverters
+	})
+	```
+
+	4.2 HTML Converters
+
+	```javascript
+	import { consolidateHTMLConverters, convertLexicalToHTML, sanitizeServerEditorConfig } from '@payloadcms/richtext-lexical'
+	import { HTMLConverters } from 'payloadcms-lexical-ext'
+
+	...
+
+	const sanitizedEditorConfig = await sanitizeServerEditorConfig(editorConfig, req.payload.config)
+
+	await convertLexicalToHTML({
+		converters: [
+			...HTMLConverters,
+			...consolidateHTMLConverters({ editorConfig: sanitizedEditorConfig })
+		],
+		data: jsonEditorContent,
+		req,
+	})
+	```
 
 ## ⚙️ Configuration Options
 The plugin comes with several customizable options:

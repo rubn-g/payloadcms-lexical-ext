@@ -34,7 +34,7 @@ export default function Icon(): React.JSX.Element {
 					const element = selection?.getNodes()[0].getTopLevelElement()
 
 					if ($isElementNode(element)) {
-						element.setStyle('background-color: ' + payload.color || '')
+						element.setStyle('background-color: ' + (payload.color || '') + ';')
 						console.log(element)
 					}
 				})

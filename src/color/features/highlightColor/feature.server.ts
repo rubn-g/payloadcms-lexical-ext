@@ -7,7 +7,7 @@ export const HighlightColorFeature = createServerFeature<ColorFeatureProps, Colo
 			ClientFeature: 'payloadcms-lexical-ext/client#HighlightColorFeatureClient',
 			clientFeatureProps: {
 				colors: props?.colors
-			},
+			}
 		}
 	},
 	key: 'highlightColor',
