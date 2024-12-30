@@ -1,5 +1,5 @@
 import { createNode } from '@payloadcms/richtext-lexical';
-import { YouTubeNode } from '../../nodes/YoutubeNode';
+import { $createYouTubeNode, YouTubeNode } from '../../nodes/YoutubeNode';
 import { createEmbedServerFeature } from '../createServerEmbed';
 
 export const YoutubeFeature = createEmbedServerFeature({
@@ -13,7 +13,7 @@ export const YoutubeFeature = createEmbedServerFeature({
 					return `
 						<div>
 							<iframe
-								src="https://www.youtube-nocookie.com/embed/${node.id}?modestbranding=1&rel=0&hl=es"
+								src="https://www.youtube-nocookie.com/embed/${node.id}?modestbranding=1&rel=0"
 								width="100%"
 								style="aspect-ratio: 16/9"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
