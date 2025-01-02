@@ -23,7 +23,6 @@ async function build(args) {
 		minify: true,
 		metafile: true,
 		treeShaking: true,
-
 		tsconfig: './tsconfig.json',
 		plugins: [
 			tailwindPlugin({

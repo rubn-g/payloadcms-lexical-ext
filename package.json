@@ -1,6 +1,6 @@
 {
 	"name": "payloadcms-lexical-ext",
-	"version": "0.4.0",
+	"version": "0.5.1",
 	"description": "Extended lexical editor features for Payload CMS",
 	"type": "module",
 	"main": "build/index.js",
@@ -8,7 +8,12 @@
 		"build": "npx tsup && node build.js"
 	},
 	"repository": "github:rubn-g/payloadcms-lexical-ext",
-	"keywords": [],
+	"keywords": [
+		"lexical",
+		"payload",
+		"payloadcms",
+		"richtext"
+	],
 	"author": "Rubén González",
 	"license": "MIT",
 	"exports": {
