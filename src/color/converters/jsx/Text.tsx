@@ -39,7 +39,7 @@ export const TextJSXConverter: JSXConverters<SerializedTextNode> = {
 		if (node.style) {
 			const style: React.CSSProperties = {}
 
-			let match = node.style.match(/^background-color: ([^;]+)/)
+			let match = node.style.match(/background-color: ([^;]+)/)
 			match && (style.backgroundColor = match[1]);
 
 			match = node.style.match(/^color: ([^;]+)/)
