@@ -44,7 +44,7 @@
 		"typescript": "^5.7.2"
 	},
 	"peerDependencies": {
-		"@lexical/table": "^0.20.0",
+		"@lexical/table": "^0.21.0",
 		"@payloadcms/richtext-lexical": "^3.0.0",
 		"escape-html": "^1.0.3"
 	}
