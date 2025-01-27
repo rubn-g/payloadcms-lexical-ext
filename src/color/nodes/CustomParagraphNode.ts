@@ -1,12 +1,5 @@
-import { SerializedParagraphNode } from '@payloadcms/richtext-lexical';
-import { DOMConversionMap, DOMConversionOutput, ElementFormatType, ParagraphNode, setNodeIndentFromDOM, Spread } from '@payloadcms/richtext-lexical/lexical';
-
-export type SerializedCustomParagraphNode = Spread<{
-	type: 'custom-paragraph';
-	style: string;
-	textStyle: string;
-	tag: 'p';
-}, SerializedParagraphNode>;
+import { DOMConversionMap, DOMConversionOutput, ElementFormatType, ParagraphNode, setNodeIndentFromDOM } from '@payloadcms/richtext-lexical/lexical';
+import { SerializedCustomParagraphNode } from '../types';
 
 export class CustomParagraphNode extends ParagraphNode {
 	static override getType() {

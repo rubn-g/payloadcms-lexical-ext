@@ -1,17 +1,10 @@
-import {
-	DecoratorBlockNode,
-	type SerializedDecoratorBlockNode,
-} from '@payloadcms/richtext-lexical/lexical/react/LexicalDecoratorBlockNode';
+import { DecoratorBlockNode } from '@payloadcms/richtext-lexical/lexical/react/LexicalDecoratorBlockNode';
+import { SerializedEmbedNode } from '../types';
 
 import type {
 	ElementFormatType,
 	NodeKey,
-	Spread,
 } from '@payloadcms/richtext-lexical/lexical';
-
-export type SerializedEmbedNode = Spread<{
-	id: string;
-}, SerializedDecoratorBlockNode>;
 
 export class EmbedNode extends DecoratorBlockNode {
 	__id: string;

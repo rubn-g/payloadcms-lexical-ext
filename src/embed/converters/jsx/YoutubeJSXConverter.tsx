@@ -1,6 +1,6 @@
 import React from 'react'
 import { JSXConverters } from '@payloadcms/richtext-lexical/react'
-import { SerializedEmbedNode } from 'src/embed/nodes/EmbedNode'
+import { SerializedEmbedNode } from 'src/embed/types'
 
 export const YoutubeJSXConverter: JSXConverters<SerializedEmbedNode> = {
 	'youtube': ({ node }) => {

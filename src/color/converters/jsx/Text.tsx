@@ -1,14 +1,6 @@
 import React from 'react'
 import { JSXConverters } from '@payloadcms/richtext-lexical/react'
-import { SerializedTextNode } from '@payloadcms/richtext-lexical/lexical'
-
-const IS_BOLD = 1
-const IS_ITALIC = 2
-const IS_STRIKETHROUGH = 4
-const IS_UNDERLINE = 8
-const IS_CODE = 16
-const IS_SUBSCRIPT = 32
-const IS_SUPERSCRIPT = 64
+import { IS_BOLD, IS_CODE, IS_ITALIC, IS_STRIKETHROUGH, IS_SUBSCRIPT, IS_SUPERSCRIPT, IS_UNDERLINE, SerializedTextNode } from '@payloadcms/richtext-lexical/lexical'
 
 export const TextJSXConverter: JSXConverters<SerializedTextNode> = {
 	text: ({ node }) => {

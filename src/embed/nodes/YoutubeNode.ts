@@ -7,7 +7,8 @@ import type {
 } from '@payloadcms/richtext-lexical/lexical';
 import { JSX } from 'react';
 import YoutubeComponent from '../components/YoutubeComponent';
-import { EmbedNode, SerializedEmbedNode } from './EmbedNode';
+import { EmbedNode } from './EmbedNode';
+import { SerializedEmbedNode } from '../types';
 
 export class YouTubeNode extends EmbedNode {
 	static getType(): string {

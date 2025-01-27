@@ -1,6 +1,5 @@
 import { convertLexicalNodesToHTML, createNode, HTMLConverter } from '@payloadcms/richtext-lexical';
-import { SerializedCustomHeadingNode } from '../../nodes/CustomHeadingNode';
-import { SerializedCustomParagraphNode } from '../../nodes/CustomParagraphNode';
+import { SerializedCustomHeadingNode, SerializedCustomParagraphNode } from 'src/color/types';
 
 export default (node) => {
 	const html: HTMLConverter<SerializedCustomHeadingNode | SerializedCustomParagraphNode> = {

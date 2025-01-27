@@ -1,12 +1,6 @@
-import { SerializedHeadingNode } from '@payloadcms/richtext-lexical';
 import { HeadingNode } from '@payloadcms/richtext-lexical/lexical/rich-text';
 import { DOMConversion, DOMConversionMap, DOMConversionOutput, ElementFormatType, setNodeIndentFromDOM, Spread } from '@payloadcms/richtext-lexical/lexical';
-
-export type SerializedCustomHeadingNode = Spread<{
-	type: 'custom-heading';
-	style: string;
-	tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-}, SerializedHeadingNode>;
+import { SerializedCustomHeadingNode } from '../types';
 
 type HeadingElement = HTMLHeadingElement & { tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' };
 
